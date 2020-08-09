@@ -2,8 +2,8 @@
     <div>
         <div class="sider-menu-logo" id="logo">
             <a href="/">
-                <img src="../../../../assets/images/logo-ant.svg" alt="logo">
-                <h1>Ant Design Pro</h1>
+                <img src="../../../../../../assets/images/logo-ant.svg" alt="logo">
+                <h1 v-if="_visibleTitle">Ant Design Pro</h1>
             </a>
         </div>
         <a-menu theme="dark" mode="inline" :default-selected-keys="['1']" style="padding: 16px 0px; width: 100%;">
@@ -25,13 +25,18 @@
 
 <script lang="ts">
 
-    import {Component, Vue} from "vue-property-decorator";
+    import {Component, Prop, Vue} from "vue-property-decorator";
 
     @Component({
         name: 'SideBarContent'
     })
     export default class extends Vue {
+        @Prop({ default: () => true })
+        private visibleTitle!: boolean;
 
+        get _visibleTitle(): boolean {
+            return this.visibleTitle;
+        }
     }
 </script>
 

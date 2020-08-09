@@ -1,16 +1,20 @@
 <template>
     <div>
-        <sidebar-desktop v-if="device !== deviceType.Mobile" :collapsed="collapsed" />
-        <sidebar-mobile v-else :visible="visible" @closeSidebar="closeSidebar"/>
+        <div class="sidebar-desktop">
+            <sidebar-desktop v-if="device !== deviceType.Mobile" :collapsed="collapsed" />
+        </div>
+        <div class="sidebar-mobile">
+            <sidebar-mobile v-if="device === deviceType.Mobile" :visible="visible" @closeSidebar="closeSidebar"/>
+        </div>
     </div>
 </template>
 
 <script lang="ts">
     import {Component, Vue} from "vue-property-decorator";
     import {AppModule} from "@/store/modules/app";
-    import SidebarContent from "./SidebarContent.vue";
-    import SidebarDesktop from "./SidebarDesktop.vue";
-    import SidebarMobile from "./SidebarMobile.vue";
+    import SidebarContent from "./components/SidebarContent.vue";
+    import SidebarDesktop from "./components/SidebarDesktop.vue";
+    import SidebarMobile from "./components/SidebarMobile.vue";
     import {DeviceType} from "@/enums/type";
 
     @Component({
@@ -26,21 +30,18 @@
         get sidebar() {
             return AppModule.sidebar;
         }
-
         get collapsed() {
             return !this.sidebar.opened;
         }
-
         get visible() {
             return this.sidebar.opened;
         }
-
         private closeSidebar() {
             AppModule.CloseSidebar();
         }
     }
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 
 </style>

@@ -1,1 +1,1 @@
-export { DeviceType } from "./DeviceType"
+export { DeviceType } from "./device"

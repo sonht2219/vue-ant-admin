@@ -21,7 +21,7 @@
     import {DeviceType} from "@/enums/type";
 
     @Component({
-        name: 'Layout',
+        name: 'LayoutCommon',
         components: {Navbar, AppContent, Sidebar},
     })
     export default class extends mixins(ResizeMixin) {
@@ -33,6 +33,6 @@
     }
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 
 </style>

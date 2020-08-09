@@ -1,10 +1,10 @@
 import {Action, getModule, Module, Mutation, VuexModule} from "vuex-module-decorators";
 import store from "../index"
-import {IAppState} from "@/interfaces/state";
+import {AppState} from "@/interfaces/state";
 import {DeviceType} from "@/enums/type";
 
 @Module({ dynamic: true, store, name: 'app' })
-class App extends VuexModule implements IAppState {
+class App extends VuexModule implements AppState {
     public sidebar = {
         opened: true
     };

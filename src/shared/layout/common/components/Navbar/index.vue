@@ -2,7 +2,7 @@
     <a-layout-header style="background: #fff; padding: 0">
         <a href="/" v-show="device === deviceType.Mobile">
             <span class="header-logo">
-                <img src="../../../../assets/images/logo-ant.svg" alt="logo">
+                <img src="../../../../../assets/images/logo-ant.svg" alt="logo">
             </span>
         </a>
         <hamburger :is-active="sidebar.opened" @toggleClick="toggleSidebar"/>
@@ -11,7 +11,7 @@
 
 <script lang="ts">
     import {Component, Vue} from "vue-property-decorator";
-    import { Hamburger } from "../../../components";
+    import { Hamburger } from "../../../../components";
     import {AppModule} from "@/store/modules/app";
     import {DeviceType} from "@/enums/type";
 
@@ -34,6 +34,6 @@
     }
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 
 </style>

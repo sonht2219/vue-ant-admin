@@ -3,15 +3,16 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import Antd from 'ant-design-vue'
-import 'ant-design-vue/dist/antd.css'
-import "./assets/css/index.scss";
+// import 'ant-design-vue/dist/antd.less'
+import "./assets/css/index.less";
+import "./guards";
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
-Vue.use(Antd)
+Vue.use(Antd);
 
 new Vue({
   router,
   store,
   render: h => h(App)
-}).$mount('#app')
+}).$mount('#app');
